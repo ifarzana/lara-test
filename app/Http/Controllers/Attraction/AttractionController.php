@@ -185,15 +185,21 @@ class AttractionController extends Controller
         foreach ($attractions as $key => $value){
 
             /*Find all five stars*/
-            $five = AttractionReview::where('rating', 5)->where('attraction_id', $value->id)->get();
-            $four = AttractionReview::where('rating', 4)->where('attraction_id', $value->id)->get();
-            $three = AttractionReview::where('rating', 3)->where('attraction_id', $value->id)->get();
-            $two = AttractionReview::where('rating', 2)->where('attraction_id', $value->id)->get();
-            $one = AttractionReview::where('rating', 1)->where('attraction_id', $value->id)->get();
+            $five = AttractionReview::where('rating', 5)->where('attraction_id', $value->id)->where('isHidden', 0)->get();
+            $four = AttractionReview::where('rating', 4)->where('attraction_id', $value->id)->where('isHidden', 0)->get();
+            $three = AttractionReview::where('rating', 3)->where('attraction_id', $value->id)->where('isHidden', 0)->get();
+            $two = AttractionReview::where('rating', 2)->where('attraction_id', $value->id)->where('isHidden', 0)->get();
+            $one = AttractionReview::where('rating', 1)->where('attraction_id', $value->id)->where('isHidden', 0)->get();
 
             $x = 5 * count($five) + 4 * count($four) + 3 * count($three) + 2 * count($two) + 1 * count($one);
+            $y = count($five) + count($four) + count($three) + count($two) + count($one);
 
-            $average[$value->id] = $x / (count($five) + count($four) + count($three) + count($two) + count($one));
+            if($y >= 1){
+                $average[$value->id] = $x / $y;
+            }
+            else{
+                $average[$value->id] = 0;
+            }
 
         }
 
