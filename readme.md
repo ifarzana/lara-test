@@ -10,6 +10,16 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
 
+## Laravel test description
+
+A Laravel application which stores data about attractions.
+
+All users should be able to view any approved attractions in the database.
+
+Authenticated users should be able review the attractions, and leave a rating between 1-5.  Each user should only be allowed to create one review for an attraction, however they should be able to update their own review at a later date.
+
+Users with administrator access should be able to add, edit and delete attractions from the system. They should also have the option to review and hide any inappropriate reviews.
+
 ## Official Documentation
 
 Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
