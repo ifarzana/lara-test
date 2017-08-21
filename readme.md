@@ -6,8 +6,6 @@
 [![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-## Laravel test description
-
 A Laravel application which stores data about attractions.
 
 All users should be able to view any approved attractions in the database.
